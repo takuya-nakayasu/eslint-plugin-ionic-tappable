@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-ionic-tappable",
   "version": "0.0.1",
-  "description": "ESLint plugin for regular expression lookbehind assertions",
+  "description": "ESLint plugin for Ionic tappable attribute",
   "author": {
     "name": "Takuya Nakayasu",
     "email": "l08084.1989@gmail.com",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/l08084/eslint-plugin-lookbehind-assertions.git"
+    "url": "git+https://github.com/l08084/eslint-plugin-ionic-tappable.git"
   },
   "homepage": "https://github.com/l08084/eslint-plugin-ionic-tappable",
   "license": "MIT",
