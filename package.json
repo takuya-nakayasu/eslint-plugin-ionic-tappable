@@ -29,6 +29,7 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
+    "@angular-eslint/template-parser": "12.2.0",
     "@types/jest": "26.0.23",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/experimental-utils": "4.25.0",
