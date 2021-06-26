@@ -1,3 +1,5 @@
+import type { TmplAstElement } from '@angular/compiler';
+
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 
 export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
@@ -6,23 +8,24 @@ export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
     docs: {
       category: 'Best Practices',
       description:
-        'Enforce `(click)` is accompanied by `tappable` except for `<button>`, `<ion-button>` and `<a>`',
+        'Ensures that the click event is accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>`.',
       recommended: 'warn',
       url: '',
     },
     messages: {
       haveTappable:
-        '`(click)` must be accompanied by `tappable` except for `<button>`, `<ion-button>` and `<a>`',
+        'click must be accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>`.',
     },
     schema: [],
   },
   create: (context) => {
     return {
-      Literal(node) {
-        context.report({
-          node,
-          messageId: 'haveTappable',
-        });
+      Element(node: TmplAstElement) {
+        console.log(node);
+        // context.report({
+        //   nod,
+        //   messageId: 'haveTappable',
+        // });
       },
     };
   },
