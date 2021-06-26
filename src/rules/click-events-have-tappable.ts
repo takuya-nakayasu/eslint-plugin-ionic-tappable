@@ -2,17 +2,17 @@ import { TSESLint } from '@typescript-eslint/experimental-utils';
 
 export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
   meta: {
-    type: 'problem',
+    type: 'suggestion',
     docs: {
-      category: 'Possible Errors',
+      category: 'Best Practices',
       description:
-        'disallow the use of lookbehind assertions((?<= ) and (?<! )) in regular expressions',
-      recommended: 'error',
+        'Enforce `(click)` is accompanied by `tappable` except for `<button>`, `<ion-button>` and `<a>`',
+      recommended: 'warn',
       url: '',
     },
     messages: {
       haveTappable:
-        'Unexpected lookbehind assertions((?<= ) and (?<! )) in regular expression: {{stringValue}}.',
+        '`(click)` must be accompanied by `tappable` except for `<button>`, `<ion-button>` and `<a>`',
     },
     schema: [],
   },

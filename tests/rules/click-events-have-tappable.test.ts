@@ -6,22 +6,10 @@ const tester = new TSESLint.RuleTester({
 });
 
 tester.run('haveTappable', haveTappable, {
-  valid: [{ code: 'const RE_AS_BS = /aa(?=bb)/' }],
+  valid: [{ code: '<h1>Heading Content!</h1>' }],
   invalid: [
     {
-      code: 'const RE_DOLLAR_PREFIX = /(?<=$)foo/g',
-      errors: [{ messageId: 'haveTappable' }],
-    },
-    {
-      code: `const re = new RegExp('(?<=ripe )orange')`,
-      errors: [{ messageId: 'haveTappable' }],
-    },
-    {
-      code: `const str = '(?<!ripe )orange'`,
-      errors: [{ messageId: 'haveTappable' }],
-    },
-    {
-      code: 'const RE_DOLLAR_PREFIX = /(?<!$)foo/g',
+      code: '<h1>Heading Content!</h1>',
       errors: [{ messageId: 'haveTappable' }],
     },
   ],
