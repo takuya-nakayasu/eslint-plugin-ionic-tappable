@@ -1,10 +1,14 @@
 # Ensures that the click event is accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>` (`click-events-have-tappable`)
 
-https://ionicframework.com/jp/docs/troubleshooting/runtime#-
+https://ionicframework.com/docs/troubleshooting/runtime#-
 
 > In general, we recommend only adding `(click)` events to elements that are normally clickable. This includes `<button>` and `<a>` elements. This improves accessibility as a screen reader will be able to tell that the element is clickable
 
 > However, you may need to add a `(click)` event to an element that is not normally clickable. When you do this you may experience a 300ms delay from the time you click the element to the event firing. To remove this delay, you can add the tappable attribute to your element.
+
+```html
+<div tappable (click)="doClick()">I am clickable!</div>
+```
 
 ## Rule Details
 
