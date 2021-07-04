@@ -1,8 +1,26 @@
-import type { TmplAstElement } from '@angular/compiler';
+import type { TmplAstElement, ParseSourceSpan } from '@angular/compiler';
 
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
 
-export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
+function convertNodeSourceSpanToLoc(
+  sourceSpan: ParseSourceSpan
+): TSESTree.SourceLocation {
+  return {
+    start: {
+      line: sourceSpan.start.line + 1,
+      column: sourceSpan.start.col,
+    },
+    end: {
+      line: sourceSpan.end.line + 1,
+      column: sourceSpan.end.col,
+    },
+  };
+}
+
+export const clickEventsHaveTappable: TSESLint.RuleModule<
+  'clickEventsHaveTappable',
+  []
+> = {
   meta: {
     type: 'suggestion',
     docs: {
@@ -13,7 +31,7 @@ export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
       url: 'https://github.com/l08084/eslint-plugin-ionic-tappable/blob/main/docs/rules/click-events-have-tappable.md',
     },
     messages: {
-      haveTappable:
+      clickEventsHaveTappable:
         'click must be accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>`.',
     },
     schema: [],
@@ -21,15 +39,29 @@ export const haveTappable: TSESLint.RuleModule<'haveTappable', []> = {
   create: (context) => {
     return {
       Element(node: TmplAstElement) {
-        console.log(node);
-        // context.report({
-        //   nod,
-        //   messageId: 'haveTappable',
-        // });
+        const name = node.name;
+        if (name === 'ion-button' || name === 'button' || name === 'a') {
+          return;
+        }
+
+        const haveClickEvent = node.outputs.find(
+          (output) => output.name === 'click'
+        );
+        if (!haveClickEvent) {
+          return;
+        }
+
+        const haveTappable = node.attributes.find(
+          (attribute) => attribute.name === 'tappable'
+        );
+        if (!haveTappable) {
+          const loc = convertNodeSourceSpanToLoc(node.sourceSpan);
+          context.report({ loc, messageId: 'clickEventsHaveTappable' });
+        }
       },
     };
   },
 };
 
-module.exports = haveTappable;
-export default haveTappable;
+module.exports = clickEventsHaveTappable;
+export default clickEventsHaveTappable;
