@@ -28,7 +28,7 @@ export const clickEventsHaveTappable: TSESLint.RuleModule<
       description:
         'Ensures that the click event is accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>`.',
       recommended: 'warn',
-      url: 'https://github.com/l08084/eslint-plugin-ionic-tappable/blob/main/docs/rules/click-events-have-tappable.md',
+      url: 'https://github.com/takuya-nakayasu/eslint-plugin-ionic-tappable/blob/main/docs/rules/click-events-have-tappable.md',
     },
     messages: {
       clickEventsHaveTappable:

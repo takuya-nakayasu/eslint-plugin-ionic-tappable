@@ -5,13 +5,13 @@
   "author": {
     "name": "Takuya Nakayasu",
     "email": "l08084.1989@gmail.com",
-    "url": "https://github.com/l08084"
+    "url": "https://github.com/takuya-nakayasu"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/l08084/eslint-plugin-ionic-tappable.git"
+    "url": "git+https://github.com/takuya-nakayasu/eslint-plugin-ionic-tappable.git"
   },
-  "homepage": "https://github.com/l08084/eslint-plugin-ionic-tappable",
+  "homepage": "https://github.com/takuya-nakayasu/eslint-plugin-ionic-tappable",
   "license": "MIT",
   "keywords": [
     "eslint",

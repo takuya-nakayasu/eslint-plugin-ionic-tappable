@@ -4,7 +4,7 @@ An ESLint plugin that click must be accompanied by `tappable`, except for `<butt
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-ionic-tappable.svg)](https://www.npmjs.com/package/eslint-plugin-ionic-tappable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter](https://img.shields.io/twitter/follow/l08084?style=social)](https://twitter.com/l08084)
+[![Twitter](https://img.shields.io/twitter/follow/takuya_nakayasu?style=social)](https://twitter.com/takuya_nakayasu)
 
 ## What’s `tappable` ?
 
